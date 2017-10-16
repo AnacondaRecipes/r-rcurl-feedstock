@@ -40,11 +40,13 @@ requirements:
     - {{posix}}automake          # [not win]
     - {{posix}}pkg-config
     - {{posix}}make
+    - {{native}}curl
     - r-bitops
 
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
+    - {{native}}curl
     - r-bitops
 
 test:
