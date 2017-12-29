@@ -1,4 +1,4 @@
-{% set version = '1.95-4.8' %}
+{% set version = '1.95-4.9' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/RCurl_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/RCurl/RCurl_{{ version }}.tar.gz
-  sha256: e72243251bbbec341bc5864305bb8cc23d311d19c5d0d9310afec7eb35aa2bfb
+  sha256: 96b5a5735c06e66d296b0dcab6c3c6cd4e5642aca3d2f79d7178ffbe73446e39
 
 
   # patches:
@@ -35,19 +35,21 @@ requirements:
     - {{ compiler('c') }}        # [not win]
     - {{native}}toolchain        # [win]
     - {{posix}}filesystem        # [win]
+    - {{posix}}sed               # [win]
+    - {{posix}}grep              # [win]
     - {{posix}}autoconf
     - {{posix}}automake-wrapper  # [win]
     - {{posix}}automake          # [not win]
     - {{posix}}pkg-config
     - {{posix}}make
-    - {{native}}curl
     - r-bitops
+    - {{native}}curl
 
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
-    - {{native}}curl
     - r-bitops
+    - {{native}}curl
 
 test:
   commands:
@@ -83,7 +85,7 @@ extra:
 # The original CRAN metadata for this package was:
 
 # Package: RCurl
-# Version: 1.95-4.8
+# Version: 1.95-4.9
 # Title: General Network (HTTP/FTP/...) Client Interface for R
 # Author: Duncan Temple Lang and the CRAN team
 # SystemRequirements: GNU make, libcurl
@@ -99,9 +101,9 @@ extra:
 # Check: To run R CMD check, one really needs network access. It is an HTTP client! This can be problematic as a Web site may be down when you run but the real tests are important.
 # Collate: aclassesEnums.R bitClasses.R xbits.R base64.R binary.S classes.S curl.S curlAuthConstants.R curlEnums.R curlError.R curlInfo.S dynamic.R form.S getFormParams.R getURLContent.R header.R http.R httpError.R httpErrors.R iconv.R info.S mime.R multi.S options.S scp.R support.S upload.R urlExists.R zclone.R zzz.R
 # NeedsCompilation: yes
-# Packaged: 2016-03-01 07:37:59 UTC; ripley
+# Packaged: 2017-12-26 19:44:05 UTC; ripley
 # Repository: CRAN
-# Date/Publication: 2016-03-01 10:54:28
+# Date/Publication: 2017-12-27 05:49:52 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
