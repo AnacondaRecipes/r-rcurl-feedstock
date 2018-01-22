@@ -10,8 +10,8 @@ package:
 source:
   fn: RCurl_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/RCurl_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/RCurl/RCurl_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/RCurl_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/RCurl/RCurl_{{ version }}.tar.gz
   sha256: 96b5a5735c06e66d296b0dcab6c3c6cd4e5642aca3d2f79d7178ffbe73446e39
 
 
