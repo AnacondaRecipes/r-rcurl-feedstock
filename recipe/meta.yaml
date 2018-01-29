@@ -47,13 +47,15 @@ requirements:
   host:
     - r-base
     - r-bitops
-    - {{native}}curl
+    - {{native}}curl             # [win]
+    - {{native}}libcurl          # [not win]
 
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-bitops
-    - {{native}}curl
+    - {{native}}curl             # [win]
+    - {{native}}libcurl          # [not win]
 
 test:
   commands:
