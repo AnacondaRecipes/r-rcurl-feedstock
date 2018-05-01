@@ -1,4 +1,4 @@
-{% set version = '1.95-4.9' %}
+{% set version = '1.95-4.10' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,18 +12,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RCurl_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RCurl/RCurl_{{ version }}.tar.gz
-  sha256: 96b5a5735c06e66d296b0dcab6c3c6cd4e5642aca3d2f79d7178ffbe73446e39
-
-
-  # patches:
-   # List any patch files here
-   # - fix.patch
+  sha256: 6f8324f1cb2de6ca818851bd9b83be33083f8752e76ce4187b7c39bda781fe0a
 
 build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 0
-
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -91,7 +85,7 @@ extra:
 # The original CRAN metadata for this package was:
 
 # Package: RCurl
-# Version: 1.95-4.9
+# Version: 1.95-4.10
 # Title: General Network (HTTP/FTP/...) Client Interface for R
 # Author: Duncan Temple Lang and the CRAN team
 # SystemRequirements: GNU make, libcurl
@@ -107,9 +101,9 @@ extra:
 # Check: To run R CMD check, one really needs network access. It is an HTTP client! This can be problematic as a Web site may be down when you run but the real tests are important.
 # Collate: aclassesEnums.R bitClasses.R xbits.R base64.R binary.S classes.S curl.S curlAuthConstants.R curlEnums.R curlError.R curlInfo.S dynamic.R form.S getFormParams.R getURLContent.R header.R http.R httpError.R httpErrors.R iconv.R info.S mime.R multi.S options.S scp.R support.S upload.R urlExists.R zclone.R zzz.R
 # NeedsCompilation: yes
-# Packaged: 2017-12-26 19:44:05 UTC; ripley
+# Packaged: 2018-01-02 17:59:16 UTC; ripley
 # Repository: CRAN
-# Date/Publication: 2017-12-27 05:49:52 UTC
+# Date/Publication: 2018-01-04 07:31:37 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
